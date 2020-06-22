@@ -1,0 +1,20 @@
+===========multi_condition_simulation=================
+
+This file is for testing multiple safety specification.
+
+The original tool only supports joint (AND) operations of multiple inequalities. But sometimes we need OR/XOR or even more logical operations. What we did here is define an empty unsafe specification unsafeSet, using it to compute the reachable set. Say we have two independent specifications unsafeSet 1 and unsafeSet2, each of them consists of joint inequalities. But we extract flowpipes one by one, and check its safety with the specification 1 and 2 independently. Then you can compromise the final results using arbitary logical operations.
+
+Something need to be carefully address with constrains, they seem to be defined with Horner form, an arbitary ponimonial transferred to Horner form can be done using some symbolic solvers e.g., https://www.mathworks.com/help/symbolic/horner.html A few wired observations: "x-y" is allowed but "3*x-4*y" is not, but 3*x+(-4*y)" is fine.
+
+
+===========linear_model_bicycle=================
+
+examples of using linear time variant systems of bycicle model, i.e., the parameters of the linear model are input variables
+
+===========nonlinear_model_bicycle=================
+
+examples of using non-linear time variant systems of bycicle model, i.e., the parameters of the linear model are input variables. We can include the variable beta or not.
+
+===========linear_tire=============================
+
+dynamic bicycle model considering linear tire force
