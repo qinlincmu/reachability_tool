@@ -1,3 +1,14 @@
+===========kinematic bicycle model===================
+
+ODE defined as:
+x_dot = v * cos(psi)
+y_dot = v * sin(psi)
+psi = v * tan(delta/l)
+
+x (x position in inertial frame)
+y (y position in inertial frame)
+psi (yaw)
+
 ===========multi_condition_simulation=================
 
 This file is for testing multiple safety specification.
@@ -18,3 +29,13 @@ examples of using non-linear time variant systems of bycicle model, i.e., the pa
 ===========linear_tire=============================
 
 dynamic bicycle model considering linear tire force
+
+
+===========installation============================
+suppose you're working on kinematic bicycle model
+1. put "flowstar" file and "kinematic_bicycle" file in the same level of directory
+2. install gcc-8 and g++-8, so far flow* only works with at least version-8 compilers
+3. install latest m4, gmp, mpfr, gsl, glpk, bison, and flex. (one possible issue in Ubuntu 18, please install flex 2.6.3 instaed of 2.6.4)
+4. type "make" in the flowstar file, then type "sudo ldconfig"
+5. type "make" in the "kinematic_bicycle" file, if everything goes well, you'll find an executable RC_bicycle program
+NOTE: so far the prototype is only working in Linux, only Ubuntu16.04 LTS has been tested.
